@@ -3,7 +3,7 @@
 $items = array(
     array(
         'metadata' => array(
-            'name' => 'Projects',
+            'name' => 'Project',
             'description' => "A document that is broken out into it's constituent pages."
         ),
         'elements' => array()
