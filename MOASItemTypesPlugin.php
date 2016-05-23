@@ -85,7 +85,7 @@ class MOASItemTypesPlugin extends Omeka_Plugin_AbstractPlugin
         );
 
         // if we can't find it create a new one.
-        if ($element === null) {
+        if ($elementReturn === null) {
             $elementReturn = new Element();
         }
 
