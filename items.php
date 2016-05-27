@@ -39,7 +39,7 @@ $items = array(
 
     array(
         'metadata' => array(
-            'name' => 'Person',
+            'name' => 'People',
             'description' => 'Person profiles. eg PGRs, academics, lawyers, historians.'
         ),
         'elements' => array(
