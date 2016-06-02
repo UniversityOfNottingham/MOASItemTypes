@@ -119,11 +119,6 @@ $items = array(
             ),
             array(
                 'element_set' => 'Item Type Metadata',
-                'name' => 'Themes',
-                'description' => 'Areas of interest.'
-            ),
-            array(
-                'element_set' => 'Item Type Metadata',
                 'name' => 'Publications',
                 'description' => 'Use if want to list ALL Publications; bulleted list.'
             ),
