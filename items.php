@@ -119,6 +119,26 @@ $items = array(
             ),
             array(
                 'element_set' => 'Item Type Metadata',
+                'name' => 'Juristiction - International',
+                'description' => 'Juristiction - International.'
+            ),
+            array(
+                'element_set' => 'Item Type Metadata',
+                'name' => 'Juristiction - Domestic',
+                'description' => 'Juristiction - Domestic.'
+            ),
+            array(
+                'element_set' => 'Item Type Metadata',
+                'name' => 'Practical Expertise',
+                'description' => 'Practical Expertise.'
+            ),
+            array(
+                'element_set' => 'Item Type Metadata',
+                'name' => 'Availability',
+                'description' => 'Availability.'
+            ),
+            array(
+                'element_set' => 'Item Type Metadata',
                 'name' => 'Publications',
                 'description' => 'Use if want to list ALL Publications; bulleted list.'
             ),
