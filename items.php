@@ -119,13 +119,13 @@ $items = array(
             ),
             array(
                 'element_set' => 'Item Type Metadata',
-                'name' => 'Juristiction - International',
-                'description' => 'Juristiction - International.'
+                'name' => 'Jurisdiction - International',
+                'description' => 'Jurisdiction - International.'
             ),
             array(
                 'element_set' => 'Item Type Metadata',
-                'name' => 'Juristiction - Domestic',
-                'description' => 'Juristiction - Domestic.'
+                'name' => 'Jurisdiction - Domestic',
+                'description' => 'Jurisdiction - Domestic.'
             ),
             array(
                 'element_set' => 'Item Type Metadata',
