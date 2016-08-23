@@ -124,7 +124,12 @@ class MOASItemTypesPlugin extends Omeka_Plugin_AbstractPlugin
             foreach ($itemTypes as $itemTypeFromDB) {
                 if ($itemType['metadata']['name'] === $itemTypeFromDB->name) {
                     $itemTypeFromDB->description = $itemType['metadata']['description'];
-                    $itemTypeFromDB->elements = $this->_buildElements($itemType['elements']);
+
+                    // Simplest way to ensure the elements match what we want is to remove all and then
+                    // add the ones we want back. This relies on the the implementation of the ItemType->afterSave()
+                    // method.
+                    $itemTypeFromDB->removeElements($itemTypeFromDB->Elements);
+                    $itemTypeFromDB->addElements($this->_buildElements($itemType['elements']));
 
                     $itemTypeFromDB->save();
 
