@@ -61,13 +61,14 @@ class MOASItemTypesPlugin extends Omeka_Plugin_AbstractPlugin
             '<p><strong>', '</strong>', '</p>');
     }
 
-    public function hookUpgrade($oldVersion, $newVersion)
+    public function hookUpgrade($args)
     {
-        switch($oldVersion)
+        switch($args['old_version'])
         {
             // let the plugin cascade its upgrades
-            case '1.0.0':
-                // code to upgrade from 1.0.0 to 1.1.0
+            case '1.0.0' :
+            case '1.2.5' :
+                $this->_125SpellingFix();
             default :
                 $this->_updateItemTypes();
         }
@@ -134,5 +135,26 @@ class MOASItemTypesPlugin extends Omeka_Plugin_AbstractPlugin
             // didn't find it in the db already. make a new one.
             insert_item_type($itemType['metadata'], $this->_buildElements($itemType['elements']));
         });
+    }
+
+    private function _125SpellingFix()
+    {
+        $errors = array(
+            'Juristiction - International' => 'Jurisdiction - International',
+            'Juristiction - Domestic' => 'Jurisdiction - Domestic'
+        );
+
+        /** @var Table_Element $elementTable */
+        $elementTable = $this->_db->getTable('Element');
+
+        foreach ($errors as $error => $correction) {
+            /** @var Element $element */
+            $element = $elementTable->findByElementSetNameAndElementName(
+                'Item Type Metadata', $error
+            );
+
+            $element->name = $correction;
+            $element->save();
+        }
     }
 }
