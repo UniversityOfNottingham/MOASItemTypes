@@ -6,7 +6,12 @@ $items = array(
             'name' => 'Project',
             'description' => "A document that is broken out into it's constituent pages."
         ),
-        'elements' => array()
+        'elements' => array(
+            array(
+                'element_set' => 'Item Type Metadata',
+                'name' => 'Location'
+            )
+        )
     ),
     array(
         'metadata' => array(
